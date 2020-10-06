@@ -32,7 +32,6 @@ const ToDo = () => {
 
     return (
         <div>
-            <h3>Add new task</h3>
             <div>
                 <input
                     className = "task-input"
@@ -47,6 +46,7 @@ const ToDo = () => {
                     Add Task
                 </button>
             </div>
+            <h4>Tasks: </h4>
             <div>
                 {console.log("current state: ", state)}
                 {state.todo.map(task => (
