@@ -43,6 +43,7 @@ const ToDoForm = () => {
                 </button>
             </div>
             <div>
+                {console.log("current state: ", state)}
                 {state.todo.map(task => (
                     <div 
                         className = {`task${task.completed ? ' completed' : ''}`}
