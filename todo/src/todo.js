@@ -2,7 +2,7 @@ import React, { useState, useReducer } from 'react';
 
 import { initialState, reducer } from "./reducers/todoReducer";
 
-const ToDoForm = () => {
+const ToDo = () => {
 
     const [newTask, setNewTask] = useState("");
 
@@ -24,6 +24,11 @@ const ToDoForm = () => {
     const toggleTask = (taskId) => {
         dispatch({ type: "TOGGLE_COMPLETED", payload: taskId })
       };
+
+    const clearCompleted = (e) => {
+        e.preventDefault();
+        dispatch({ type: "CLEAR_COMPLETE" })
+    }
 
     return (
         <div>
@@ -53,8 +58,13 @@ const ToDoForm = () => {
                     </div>
                 ))}
             </div>
+            <button
+                onClick = {clearCompleted}
+            >
+                Clear Completed Tasks
+            </button>
         </div>
     );
 };
 
-export default ToDoForm;
+export default ToDo;
